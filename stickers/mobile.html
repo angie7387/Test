@@ -1,0 +1,179 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+        crossorigin="anonymous"></script>
+    <title>Double Happiness</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .item {
+        padding: 20px;
+
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        padding: 15px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        font-size: 13pt;
+    }
+
+    a {
+        color: black;
+    }
+
+
+    img {
+        width: 75%;
+        height: auto;
+        display: block;
+        margin: 40px auto;
+        filter: drop-shadow(1px 3px 4px #00000078);
+    }
+
+
+    .container-category {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr 1fr;
+    }
+
+
+    .container-name {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr 1fr;
+    }
+
+    .container div {
+        padding: 1px;
+        font-size: 30px;
+    }
+
+    .background {
+        border-bottom: 1px solid black;
+    }
+
+    .name {
+        font-size: 18pt;
+        text-transform: uppercase;
+
+    }
+
+    .category {
+        font-size: 13pt !important;
+    }
+
+
+    .back {
+        top: 10px;
+        text-decoration: none;
+    }
+
+    .line {
+        border-top: 1px solid black;
+        z-index: 2;
+        top: 10px;
+    }
+
+    .line-back {
+        border-top: 1px solid black;
+        position: relative;
+        top: 15px;
+        z-index: 2;
+    }
+
+
+    .arrow-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .arrow-left {
+        justify-content: start;
+        font
+    }
+
+    .arrow-right {
+        justify-self: end;
+    }
+
+    @media screen and (max-width: 600px) {
+        .category {
+            font-size: 10px !important
+        }
+
+        .name {
+            font-size: 10px !important
+        }
+
+        header {
+            font-size: 10px;
+        }
+
+        .back {
+            font-size: 10px;
+        }
+
+        img {
+            margin-top: 40px;
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="item">
+        <div><a href="../index.html" class="back">← Back</a></div>
+        <div class="line-back"></div>
+        <div>
+            <div class="background"><img src="1 - DoubleHappiness.png" alt="double happiness"></img></div>
+        </div>
+        <div class="container-category">
+            <div class="category">PLU</div>
+
+            <div class="category">Fruit Kind</div>
+            <div class="category">Country of Origin</div>
+            <div class="category">Brand</div>
+        </div>
+        <div class="line"></div>
+        <div class="container-name">
+            <div class="name">#4102</div>
+            <div class="name">ORANGE</div>
+            <div class="name">USA</div>
+            <div class="name">Double Happiness</div>
+        </div>
+        <div class="line"></div>
+        <div class="arrow-container">
+            <a class="arrow-left" href="">←</a>
+            <a class="arrow-right" href="halos.html">→</a>
+        </div>
+    </div>
+</body>
+<script>
+    if ($(window).width() < 960) {
+            $("#include").load("layout-1.html");
+        }
+        else {
+            $("#include").load("layout-2.html");
+        }
+</script>
+
+</html>

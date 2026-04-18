@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Sticker Archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: 15px;
+      width: 100%;
+      border-bottom: 1px solid black;
+      font-size: 13pt;
+      align-items: center;
+    }
+
+    header a {
+      justify-self: end;
+    }
+
+    a {
+      color: black;
+    }
+
+    .title {
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 15px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        font-size: 10px;
+        margin: 0;
+      }
+
+      body {
+        font-size: 20px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .line {
+      border-top: 1px solid black;
+      top: 10px;
+    }
+
+    .line-vertical {
+      border-right: 1px solid black;
+      margin-right: 15px;
+    }
+
+    .purpose-container {
+      display: grid;
+      grid-template-columns: 1fr .01fr 1fr .01fr 1fr .01fr 1fr;
+    }
+
+    h1 {
+      font-size: 13pt;
+      font-weight: 100;
+    }
+
+    h2 {
+      padding: 15px;
+      font-size: 10pt;
+      font-weight: 100;
+    }
+
+        .btn {
+      text-decoration: none;
+      color: black;
+    }
+
+    .btn:hover {
+      text-decoration: underline;
+    }
+
+    .about {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><a class="title btn" href="../index.html">Fruit Sticker Archive</a></div>
+    <div>
+      <a class="about" href="about.html">About</a>
+    </div>
+  </header>
+  <img src="../assets/stickerbook.jpg">
+<!-- <h2>While this collection is digital, all stickers come from the physical world. They were first preserved in this outdated planner, with no rhyme nor rhythm. Just pure chaos and passion.</h2> -->
+  <div class="container">
+    <div><h1>ABOUT</h1></div>
+    <div class="line"></div>
+    <div><h1>This website acts as an archive of fruit stickers from Angie Li’s personal collection, acquired between 2021 and present
+    day. This archive showcases an often overlooked visual ephemera that traces national histories, cultures, and of course,
+    their local fruits.</h1>
+    </div>
+    <br>
+    <br>
+    <div><h1>PURPOSE</h1></div>
+    <div class="line"></div>
+    <h1>
+      <div class="purpose-container">
+        <div>→ Elevate the often overlooked tiny fruit sticker<br></div>
+        <div class="line-vertical"></div>
+        <div>→ Preserving artifacts of design ephemera<br></div>
+        <div class="line-vertical"></div>
+        <div>→ Highlighting the everyday appearances of design<br></div>
+        <div class="line-vertical"></div>
+        <div>→ Sparking connection through shared interest in fruit stickers<br></div>
+      </div>
+    </h1>
+    <br>
+  </div>
+</body>
+</html>
