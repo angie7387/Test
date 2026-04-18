@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>Fruit Sticker Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-
   <style>
     * {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -47,6 +44,7 @@
     img {
       max-width: 100%;
       height: auto;
+      filter: drop-shadow(1px 2px 1px #00000056);
     }
 
     .dropdown-container {
@@ -54,6 +52,7 @@
       justify-content: flex-end;
       gap: 15px;
       padding: 10px;
+      z-index: 4 !important;
     }
 
     .dropbtn {
@@ -63,8 +62,12 @@
       cursor: pointer;
     }
 
+    .dropbtn:hover {
+      text-decoration: underline;    }
+
     .dropdown {
       position: relative;
+      z-index: 4;
     }
 
     .dropdown-content {
@@ -72,24 +75,32 @@
       position: absolute;
       background-color: white;
       min-width: 100px;
-      z-index: 1;
       right: 0;
+      z-index: 4;
+      font-size: 10pt;
+    
     }
 
     .dropdown-content a {
       padding: 10px;
       display: block;
       cursor: pointer;
+        z-index: 4;
+
     }
 
     .dropdown-content a:hover {
-      background-color: #e7e7e7;
-    }
+            text-decoration: underline;
+            border: 1px solid black;
+              }
+
 
     .stickers {
       position: relative;
       width: 100%;
-      min-height: 80vh;
+      min-height: 100vh;
+      margin-top: -20px;
+
     }
 
     .randomImage {
@@ -98,16 +109,30 @@
     }
 
     .randomImage img {
-      max-height: 200px;
+      max-height: 325px;
     }
 
     .randomImage:hover {
       transform: rotate(0deg) scale(1.05) !important;
       transition: 0.25s ease-in-out;
+      z-index: 3;
     }
+   a {
+    color: black;
+   }
 
+   .about {
+    text-decoration: none;
+   }
+
+   .about:hover {
+    text-decoration: underline;
+   }
     @media screen and (max-width: 600px) {
 
+      body {
+        font-size: 13pt;
+      }
       .stickers {
         display: flex;
         flex-direction: column;
@@ -122,26 +147,50 @@
       }
 
       .randomImage img {
-        max-width: 250px;
+        max-width: 350px;
         width: 100%;
         height: auto;
       }
+
+      .dropdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px;
+      z-index: 4 !important;
+      }
+      .dropbtn {
+        font-size: 18pt;
+      }
+      
+      .dropdown-content {
+        font-size: 16pt;
+      }
+    
     }
+    
+    
+
   </style>
 
   <header>
     <div>Fruit Sticker Archive</div>
-    <a href="about/about.html">About</a>
+    <a class="about" href="about/about.html">About</a>
   </header>
 
   <div class="dropdown-container">
-
     <div class="dropdown">
       <button class="dropbtn">Fruit Kind</button>
       <div class="dropdown-content">
         <a onclick="filterObjects('avocado')">Avocado</a>
         <a onclick="filterObjects('banana')">Banana</a>
         <a onclick="filterObjects('citrus')">Citrus</a>
+        <a onclick="filterObjects('eggplant')">Eggplant</a>
+        <a onclick="filterObjects('melon')">Melon</a>
+        <a onclick="filterObjects('papaya')">Papaya</a>
+        <a onclick="filterObjects('coconut')">Coconut</a>
+        <a onclick="filterObjects('squash')">Squash</a>
+        <a onclick="filterObjects('mango')">Mango</a>
         <a onclick="filterObjects('all')">Show All</a>
       </div>
     </div>
@@ -153,6 +202,12 @@
         <a onclick="filterObjects('mexico')">Mexico</a>
         <a onclick="filterObjects('usa')">USA</a>
         <a onclick="filterObjects('costa')">Costa Rica</a>
+        <a onclick="filterObjects('guatemala')">Guatemala</a>
+        <a onclick="filterObjects('argentina')">Argentina</a>
+        <a onclick="filterObjects('honduras')">Honduras</a>
+        <a onclick="filterObjects('spain')">Spain</a>
+        <a onclick="filterObjects('colombia')">Colombia</a>
+        <a onclick="filterObjects('israel')">Israel</a>
         <a onclick="filterObjects('all')">Show All</a>
       </div>
     </div>
@@ -164,54 +219,94 @@
         <a onclick="filterObjects('chiquita')">Chiquita</a>
         <a onclick="filterObjects('mike')">Mike's Melons</a>
         <a onclick="filterObjects('slimcado')">Slimcado</a>
+        <a onclick="filterObjects('fama')">Fama</a>
+        <a onclick="filterObjects('chula')">Chula</a>
+        <a onclick="filterObjects('victoria')">Victoria Privilege</a>
+        <a onclick="filterObjects('plainville')">Plainville Farm</a>
+        <a onclick="filterObjects('highland')">Highland</a>
+        <a onclick="filterObjects('seeded')">Seeded Produce</a>
+        <a onclick="filterObjects('bigchuy')">Big Chuy</a>
+        <a onclick="filterObjects('carribean')">Carribean Speciality Herbs</a>
         <a onclick="filterObjects('all')">Show All</a>
       </div>
     </div>
-
   </div>
 
   <div class="stickers">
-
     <a class="box orange usa show randomImage" href="stickers/double-happiness.html">
-      <img src="assets/1 - DoubleHappiness.png">
+      <img src="fruitstickersmall/57.png">
     </a>
-
     <a class="box citrus usa show randomImage" href="stickers/halos.html">
-      <img src="assets/1 - Halos.png">
+      <img src="fruitstickersmall/62.png">
     </a>
-
-    <a class="box citrus mexico show randomImage" href="stickers/jaffa.html">
-      <img src="assets/1 - Jaffa Red Pomelo- Palestinian Colors.png">
+    <a class="box citrus israel show randomImage" href="stickers/jaffa.html">
+      <img src="fruitstickersmall/61.png">
     </a>
-
-    <a class="box citrus usa show randomImage" href="stickers/jaffa-sweetie.html">
-      <img src="assets/1 - Jaffa Sweetie.png">
+    <a class="box citrus israel show randomImage" href="stickers/jaffa-sweetie.html">
+      <img src="fruitstickersmall/58.png">
     </a>
-
-    <a class="box melon usa mike show randomImage" href="stickers/mikes-melons.html">
-      <img src="assets/1 - Mike's Melons.png">
+    <a class="box melon hondruas mike show randomImage" href="stickers/mikes-melons.html">
+      <img src="fruitstickersmall/63.png">
     </a>
-
     <a class="box avocado mexico show randomImage" href="stickers/slimcado.html">
-      <img src="assets/1 - SlimCado.png">
+      <img src="fruitstickersmall/60.png">
     </a>
-
-    <a class="box banana mexico chiquita show randomImage" href="stickers/chiquita.html">
-      <img src="assets/1- CHIQUITA STICKER.png">
+    <a class="box banana guatemala chiquita show randomImage" href="stickers/chiquita.html">
+      <img src="fruitstickersmall/59.png">
     </a>
-
-    <a class="box watermelon mexico borders melon show randomImage" href="stickers/borders.html">
+    <a class="box melon mexico borders melon show randomImage" href="stickers/borders.html">
       <img src="fruitstickersmall/1.png">
     </a>
-
     <a class="box coconut costa rica tica show randomImage" href="stickers/tica.html">
       <img src="fruitstickersmall/3.png">
     </a>
-
-    <a class="box watermelon mexico tica show randomImage" href="stickers/amaris.html">
+    <a class="box melon mexico tica show randomImage" href="stickers/amaris.html">
       <img src="fruitstickersmall/5.png">
     </a>
-
+    <a class="box eggplant mexico sunfed show randomImage" href="stickers/sunfed.html">
+      <img src="fruitstickersmall/12.png">
+    </a>
+    <a class="box papaya mexico chula show randomImage" href="stickers/chula.html">
+      <img src="fruitstickersmall/13.png">
+    </a>
+    <a class="box melon spain victoria show randomImage" href="stickers/victoria.html">
+      <img src="fruitstickersmall/19.png">
+    </a>
+    <a class="box orange argentina fama show randomImage" href="stickers/fama.html">
+      <img src="fruitstickersmall/10.png">
+    </a>
+    <a class="box squash usa plainville show randomImage" href="stickers/plainville.html">
+      <img src="fruitstickersmall/39.png">
+    </a>
+    <a class="box melon usa highland show randomImage" href="stickers/highland.html">
+      <img src="fruitstickersmall/42.png">
+    </a>
+    <a class="box squash usa seeded show randomImage" href="stickers/seeded.html">
+      <img src="fruitstickersmall/48.png">
+    </a>
+    <a class="box squash mexico bigchuy show randomImage" href="stickers/bigchuy.html">
+      <img src="fruitstickersmall/49.png">
+    </a>
+    <a class="box mango colombia carribean show randomImage" href="stickers/carribean.html">
+      <img src="fruitstickersmall/54.png">
+    </a>
+    <a class="box pomegranate turkey erarslan show randomImage" href="stickers/erarslan.html">
+      <img src="fruitstickersmall/4.png">
+    </a>
+    <a class="box melon brazil dino show randomImage" href="stickers/dino.html">
+      <img src="fruitstickersmall/6.png">
+    </a>
+    <a class="box melon hondruas sol show randomImage" href="stickers/sol-1.html">
+      <img src="fruitstickersmall/8.png">
+    <a class="box melon hondruas sol show randomImage" href="stickers/sol-2.html">
+      <img src="fruitstickersmall/11.png">
+    </a>
+    <a class="box melon usa show randomImage" href="stickers/teddy.html">
+      <img src="fruitstickersmall/17.png">
+    </a>
+  <a class="box avocado mexico calavo show randomImage" href="stickers/calavo.html">
+      <img src="fruitstickersmall/21.png">
+    </a>
   </div>
 
   <script>
@@ -284,7 +379,5 @@
       }
     });
   </script>
-
 </body>
-
 </html>
