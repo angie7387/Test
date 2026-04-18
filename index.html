@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <title>Fruit Sticker Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
@@ -34,7 +33,7 @@
     }
 
     body {
-        overflow-x: hidden;
+      overflow-x: hidden;
     }
 
     .box {
@@ -48,7 +47,6 @@
     img {
       max-width: 100%;
       height: auto;
-      /* filter: drop-shadow(1px 3px 4px #00000078); */
     }
 
     .dropdown-container {
@@ -91,18 +89,6 @@
       display: block;
     }
 
-    .arrow-down {
-      display: inline;
-      margin-bottom: 20x;
-    }
-
-    @media screen and (max-width: 600px) {
-      .stickers {
-        grid-template-columns: 1fr;
-      }
-    }
-
-
     .stickers {
       position: relative;
       width: 100%;
@@ -123,7 +109,27 @@
       transition: 0.25s ease-in-out;
     }
 
+    @media screen and (max-width: 600px) {
 
+      .stickers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .randomImage {
+        position: static;
+        transform: none !important;
+      }
+
+      .randomImage img {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+      }
+    }
   </style>
 
   <header>
@@ -134,11 +140,7 @@
   <div class="dropdown-container">
 
     <div class="dropdown">
-      <button class="dropbtn">
-        <span class="label">Fruit Kind</span>
-        <span class="arrow-down">⌄</span>
-      </button>
-
+      <button class="dropbtn">Fruit Kind</button>
       <div class="dropdown-content">
         <a onclick="filterObjects('avocado')">Avocado</a>
         <a onclick="filterObjects('banana')">Banana</a>
@@ -148,23 +150,24 @@
     </div>
 
     <div class="dropdown">
-      <button class="dropbtn">Country ⌄</button>
+      <button class="dropbtn">Country</button>
       <div class="dropdown-content">
         <a onclick="filterObjects('canada')">Canada</a>
         <a onclick="filterObjects('mexico')">Mexico</a>
         <a onclick="filterObjects('usa')">USA</a>
+        <a onclick="filterObjects('costa')">Costa Rica</a>
         <a onclick="filterObjects('all')">Show All</a>
-
       </div>
     </div>
 
     <div class="dropdown">
-      <button class="dropbtn">Brand ⌄</button>
+      <button class="dropbtn">Brand</button>
       <div class="dropdown-content">
         <a onclick="filterObjects('dole')">Dole</a>
         <a onclick="filterObjects('chiquita')">Chiquita</a>
+        <a onclick="filterObjects('mike')">Mike's Melons</a>
+        <a onclick="filterObjects('slimcado')">Slimcado</a>
         <a onclick="filterObjects('all')">Show All</a>
-
       </div>
     </div>
 
@@ -180,7 +183,7 @@
       <img src="assets/1 - Halos.png">
     </a>
 
-    <a class="box citrus mexico show randomImage  " href="stickers/jaffa.html">
+    <a class="box citrus mexico show randomImage" href="stickers/jaffa.html">
       <img src="assets/1 - Jaffa Red Pomelo- Palestinian Colors.png">
     </a>
 
@@ -188,88 +191,55 @@
       <img src="assets/1 - Jaffa Sweetie.png">
     </a>
 
-    <a class="box melon usa show randomImage" href="stickers/mikes-melons.html">
+    <a class="box melon usa mike show randomImage" href="stickers/mikes-melons.html">
       <img src="assets/1 - Mike's Melons.png">
     </a>
 
-    <a class="box avocado mexico show randomImage " href="stickers/slimcado.html">
+    <a class="box avocado mexico show randomImage" href="stickers/slimcado.html">
       <img src="assets/1 - SlimCado.png">
     </a>
 
-    <a class="box banana mexico chiquita show randomImage " href="stickers/chiquita.html">
+    <a class="box banana mexico chiquita show randomImage" href="stickers/chiquita.html">
       <img src="assets/1- CHIQUITA STICKER.png">
     </a>
-      <a class="box watermelon mexico borders melon show randomImage" href="stickers/borders.html">
-        <img src="assets/1.png">
-      </a>
 
-<a class="box coconut costa rica tica show randomImage" href="stickers/tica.html">
-  <img src="assets/3.png">
-</a>
+    <a class="box watermelon mexico borders melon show randomImage" href="stickers/borders.html">
+      <img src="fruitstickersmall/1.png">
+    </a>
 
-<a class="box coconut costa rica tica show randomImage" href="stickers/tica.html">
-  <img src="assets/4.png">
-</a>
+    <a class="box coconut costa rica tica show randomImage" href="stickers/tica.html">
+      <img src="fruitstickersmall/3.png">
+    </a>
 
-  
+    <a class="box watermelon mexico tica show randomImage" href="stickers/amaris.html">
+      <img src="fruitstickersmall/5.png">
+    </a>
 
   </div>
+
   <script>
     filterObjects("all");
 
-
     function filterObjects(c) {
-      var x, i;
-      x = document.getElementsByClassName("box");
+      var x = document.getElementsByClassName("box");
       if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-        removeClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-      }
-    }
-
-    function addClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) {
-          element.className += " " + arr2[i];
+      for (let i = 0; i < x.length; i++) {
+        x[i].classList.remove("show");
+        if (x[i].className.indexOf(c) > -1) {
+          x[i].classList.add("show");
         }
       }
     }
 
-    function removeClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);
-        }
-      }
-      element.className = arr1.join(" ");
-    }
-
-    //Random placement
     function moveImage() {
-
-      // get the sticker area
       const container = document.querySelector(".stickers");
-
-      // get all stickers
       const stickers = document.querySelectorAll(".randomImage");
-
-      // store positions of stickers we already placed
       const placed = [];
 
       stickers.forEach(function (sticker) {
 
-        let x;
-        let y;
-        let overlap = true;
+        let x, y, overlap = true;
 
-        // keep trying positions until we find one that doesn't overlap
         while (overlap) {
 
           x = Math.random() * (container.clientWidth - 120);
@@ -277,9 +247,7 @@
 
           overlap = false;
 
-          // check against previously placed stickers
           for (let i = 0; i < placed.length; i++) {
-
             let dx = Math.abs(x - placed[i].x);
             let dy = Math.abs(y - placed[i].y);
 
@@ -287,29 +255,24 @@
               overlap = true;
               break;
             }
-
           }
-
         }
 
-        // place the sticker
         sticker.style.left = x + "px";
         sticker.style.top = y + "px";
 
-        // random rotation
         let rotation = Math.random() * 60 - 30;
         sticker.style.transform = "rotate(" + rotation + "deg)";
 
-        // remember this sticker's position
         placed.push({ x: x, y: y });
-
       });
-
     }
 
-  window.addEventListener("load", () => {
-    setTimeout(moveImage, 100);
-  });
+    window.addEventListener("load", () => {
+      if (window.innerWidth > 600) {
+        setTimeout(moveImage, 100); 
+      }
+    });
   </script>
 
 </body>
