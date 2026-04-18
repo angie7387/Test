@@ -73,6 +73,7 @@
       background-color: white;
       min-width: 100px;
       z-index: 1;
+      right: 0;
     }
 
     .dropdown-content a {
@@ -83,10 +84,6 @@
 
     .dropdown-content a:hover {
       background-color: #e7e7e7;
-    }
-
-    .dropdown:active .dropdown-content {
-      display: block;
     }
 
     .stickers {
@@ -231,26 +228,39 @@
       }
     }
 
+    document.querySelectorAll('.dropbtn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var content = this.nextElementSibling;
+        document.querySelectorAll('.dropdown-content').forEach(function (d) {
+          if (d !== content) d.style.display = 'none';
+        });
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.dropdown-content').forEach(function (d) {
+        d.style.display = 'none';
+      });
+    });
+
     function moveImage() {
       const container = document.querySelector(".stickers");
       const stickers = document.querySelectorAll(".randomImage");
       const placed = [];
 
       stickers.forEach(function (sticker) {
-
         let x, y, overlap = true;
 
         while (overlap) {
-
           x = Math.random() * (container.clientWidth - 120);
           y = Math.random() * (container.clientHeight - 120);
-
           overlap = false;
 
           for (let i = 0; i < placed.length; i++) {
             let dx = Math.abs(x - placed[i].x);
             let dy = Math.abs(y - placed[i].y);
-
             if (dx < 120 && dy < 120) {
               overlap = true;
               break;
@@ -268,9 +278,9 @@
       });
     }
 
-    window.addEventListener("load", () => {
+    window.addEventListener("load", function () {
       if (window.innerWidth > 600) {
-        setTimeout(moveImage, 100); 
+        setTimeout(moveImage, 100);
       }
     });
   </script>
