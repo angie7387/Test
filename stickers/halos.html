@@ -2,140 +2,157 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halos</title>
-  <style>
-    * {
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halos</title>
+    <style>
+        * {
 
-    body {
-      margin: 0;
-      padding: 0;
-      padding-bottom: 10px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+            box-sizing: border-box;
+            font-family: 'Arial Narrow Custom';
+        }
 
-    header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      padding: 15px;
-      width: 100%;
-      border-bottom: 1px solid black;
-      font-size: 13pt;
-    }
+        @font-face {
+            font-family: 'Arial Narrow Custom';
+            src: url('../fonts/arialnarrow.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-    a {
-      color: black;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 10px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    img {
-      width: 85vh;
-      height: auto;
-      display: block;
-      margin: 40px auto;
-      filter: drop-shadow(1px 3px 4px #00000078);
-    }
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            padding: 15px;
+            width: 100%;
+            border-bottom: 1px solid black;
+            font-size: 13pt;
+        }
 
-    .container-category,
-    .container-name {
-      display: grid;
-      grid-template-columns: .8fr 1fr 1fr 1fr;
-    }
+        a {
+            color: black;
+        }
 
-    .container {
-      margin-top: auto;
-      padding: 20px;
-    }
+        img {
+            width: 75vh;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            filter: drop-shadow(1px 3px 4px #00000078);
 
-    .name {
-      font-size: 13pt;
-      text-transform: uppercase;
-    }
+        }
 
-    .category {
-      font-size: 13pt !important;
-    }
+        .container-category,
+        .container-name {
+            display: grid;
+            grid-template-columns: .8fr 1fr 1fr 1fr;
+        }
 
-    .back {
-      top: 10px;
-      text-decoration: none;
-    }
+        .container {
+            position: fixed;
+            bottom: 2%;
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            background: white;
+        }
 
-    .line {
-      border-top: 1px solid black;
-      z-index: 2;
-      top: 10px;
-    }
+        .name {
+            font-size: 13pt;
+            text-transform: uppercase;
+        }
 
-    .main-content {
-      position: relative;
-      z-index: 1;
-    }
+        .category {
+            font-size: 13pt !important;
+        }
 
-    @media screen and (max-width: 600px) {
+        .back {
+            top: 10px;
+            text-decoration: none;
+        }
 
-      .category,
-      .name {
-        font-size: 13px !important;
-      }
+        .back:hover {
+            text-decoration: underline;
+        }
 
-      header {
-        font-size: 10px;
-      }
+        .line {
+            border-top: 1px solid black;
+            z-index: 2;
+            top: 10px;
+        }
 
-      .back {
-        font-size: 13px;
-      }
+        .main-content {
+            position: relative;
+            z-index: 1;
+        }
 
-      img {
-        margin-top: 40px;
-        width: 100%;
-        height: auto;
-      }
-    }
-  </style>
+        @media screen and (max-width: 600px) {
+
+            .category,
+            .name {
+                font-size: 13pt !important;
+            }
+
+            header {
+                font-size: 13pt;
+            }
+
+            .back {
+                font-size: 13pt;
+            }
+
+            img {
+                margin-top: 40px;
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="main-content">
-    <header>
-      <div>
-        <a href="../index.html" class="back">← Back</a>
-      </div>
-    </header>
+    <div class="main-content">
+        <header>
+            <div>
+                <a href="../index.html" class="back">← Back</a>
+            </div>
+        </header>
 
-    <div class="background">
-      <img src="1 - Halos.png" alt="halos">
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="line"></div>
-
-    <div class="container-category">
-      <div class="category">PLU</div>
-      <div class="category">Fruit Kind</div>
-      <div class="category">Country of Origin</div>
-      <div class="category">Brand</div>
+        <div class="background">
+            <img src="../fruitstickersmall/62.png" alt="halos">
+        </div>
     </div>
 
-    <div class="line"></div>
+    <div class="container">
+        <div class="line"></div>
 
-    <div class="container-name">
-      <div class="name">#4102</div>
-      <div class="name">Oranges</div>
-      <div class="name">USA</div>
-      <div class="name">Halos</div>
+        <div class="container-category">
+            <div class="category">PLU</div>
+            <div class="category">Fruit Kind</div>
+            <div class="category">Country of Origin</div>
+            <div class="category">Brand</div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="container-name">
+            <div class="name">#4102</div>
+            <div class="name">Citrus</div>
+            <div class="name">USA</div>
+            <div class="name">Halos</div>
+        </div>
+
+        <div class="line"></div>
     </div>
-
-    <div class="line"></div>
-  </div>
 
 </body>
 

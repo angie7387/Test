@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino</title>
+    <style>
+        * {
+
+            box-sizing: border-box;
+            font-family: 'Arial Narrow Custom';
+        }
+
+        @font-face {
+            font-family: 'Arial Narrow Custom';
+            src: url('../fonts/arialnarrow.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 10px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            padding: 15px;
+            width: 100%;
+            border-bottom: 1px solid black;
+            font-size: 13pt;
+        }
+
+        a {
+            color: black;
+        }
+
+        img {
+            width: 75vh;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            filter: drop-shadow(1px 3px 4px #00000078);
+
+        }
+
+        .container-category,
+        .container-name {
+            display: grid;
+            grid-template-columns: .8fr 1fr 1fr 1fr;
+        }
+
+        .container {
+            position: fixed;
+            bottom: 2%;
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            background: white;
+        }
+
+        .name {
+            font-size: 13pt;
+            text-transform: uppercase;
+        }
+
+        .category {
+            font-size: 13pt !important;
+        }
+
+        .back {
+            top: 10px;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+        .line {
+            border-top: 1px solid black;
+            z-index: 2;
+            top: 10px;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .category,
+            .name {
+                font-size: 13pt !important;
+            }
+
+            header {
+                font-size: 13pt;
+            }
+
+            .back {
+                font-size: 13pt;
+            }
+
+            img {
+                margin-top: 40px;
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-content">
+        <header>
+            <div>
+                <a href="../index.html" class="back">← Back</a>
+            </div>
+        </header>
+
+        <div class="background">
+            <img src="../fruitstickersmall/6.png" alt="dino">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="line"></div>
+
+        <div class="container-category">
+            <div class="category">PLU</div>
+            <div class="category">Fruit Kind</div>
+            <div class="category">Country of Origin</div>
+            <div class="category">Brand</div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="container-name">
+            <div class="name">#1373794</div>
+            <div class="name">Melon</div>
+            <div class="name">Brazil</div>
+            <div class="name">Dino</div>
+        </div>
+
+        <div class="line"></div>
+    </div>
+
+</body>
+
+</html>
